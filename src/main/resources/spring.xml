@@ -13,6 +13,9 @@
 
     <bean id="eventLogger" class="com.spring.tamara.ConsoleEventLogger" />
 
-    <bean id="app" class="com.spring.tamara.App"/>
+    <bean id="app" class="com.spring.tamara.App">
+        <constructor-arg ref="client" />
+        <constructor-arg ref="eventLogger" />
+    </bean>
 
 </beans>

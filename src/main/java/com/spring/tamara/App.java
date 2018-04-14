@@ -1,5 +1,8 @@
 package com.spring.tamara;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class App {
     private Client client;
     private EventLogger eventLogger;
@@ -19,8 +22,8 @@ public class App {
     }
 
     public static void main(String[] args) {
-        App app = new App();
-
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
+        App app = (App) ctx.getBean("app");
         app.logEvent("Some event for user 1");
     }
 }
